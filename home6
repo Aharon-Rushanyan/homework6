@@ -1,0 +1,52 @@
+///////////   1
+
+function product(arr) {
+    let max = -Infinity;
+    for (let i = 0; i < arr.length - 1; i++) {
+        let temp = arr[i] * arr[i + 1];
+        if (temp > max)
+            max = temp;
+    }
+    return max;
+}
+let arr = [9, 10, 16, 1, -5, 10, 7, 1, 5, 6, 0];
+console.log(product(arr));
+
+
+///////////   2
+
+function findLostNumber(arr) {
+    return Math.max(...arr) - Math.min(...arr) - arr.length + 1;
+}
+let arr = [-3, 2, 3, 4, 5, 10];
+console.log(findLostNumber(arr));
+
+///////   3
+
+function shortVersion(arr) {
+    let answer = "";
+    arr = arr.split(' ');
+    for (let i = 0; i < arr.length; i++)
+        answer += arr[i][0]
+    return answer.toUpperCase();
+}
+
+let arr = "Have a good nigh";
+console.log(shortVersion(arr));
+
+
+//////////    4
+
+function smallStrings(arr, num) {
+    let newarr = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (i + num <= arr.length && i === 0)
+            newarr += arr.slice(i, i + num);
+        else if (i + num <= arr.length)
+            newarr += "," + arr.slice(i, i + num);
+    }
+    return newarr;
+}
+
+let arr = "Haveagoodnight";
+console.log(smallStrings(arr, 1));
